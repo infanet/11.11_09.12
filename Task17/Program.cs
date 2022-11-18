@@ -14,6 +14,6 @@ int Quarter(int xc, int yc)
 
 int quarter = Quarter(x, y);
 string result = quarter > 0
-? $"Указанные координаты четверти -> {quarter}" 
+? $"Указанные координаты четверти -> {quarter}"
 : "Введены некоректные координаты";
 Console.WriteLine(result);
