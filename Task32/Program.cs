@@ -21,7 +21,7 @@ void PrintArray(int[] array)
         }
         else
         {
-            System.Console.WriteLine($"{array[i]}");
+            System.Console.Write($"{array[i]}");
         }
     }
     Console.Write($"]\n");
