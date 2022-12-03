@@ -4,7 +4,7 @@
     Random rd = new Random();
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = rd.Next(100, 1000);
+        arr[i] = rd.Next(0, 100);
     }
     return arr;
 }
@@ -23,21 +23,21 @@ void OutputArray(int[] arr)
     Console.Write("] -> ");
 }
 
-int EvenArray(int[] arr)
+int SumArray(int[] arr)
 {
-    int count = 0;
+    int sum = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i] % 2 == 0)
+        if (i % 2 == 1)
         {
-            count++;
+            sum = sum + arr[i];
         }
     }
-    return count;
+    return sum;
 }
 Console.WriteLine("Укажите количество массивов: ");
 int numArray = Convert.ToInt32(Console.ReadLine());
 int[] randomArray = RandomArray(numArray);
 OutputArray(randomArray);
-int cout = EvenArray(randomArray);
-Console.Write($"Четных чисел {cout}");
+int sumArray = SumArray(randomArray);
+Console.Write($"Сумма элементов на нечётных позициях будет -> {sumArray}");
