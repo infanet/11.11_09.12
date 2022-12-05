@@ -1,13 +1,42 @@
-﻿bool Triagnle(int a1, int b1, int c1)
+﻿int[] CreateArray(int size, int min, int max)
 {
-    return a1 < b1+c1 && b1 < a1+c1 && c1 < a1+b1;
+    int[] arr = new int[size];
+    Random rnd = new Random();
+    for (int i = 0; i < arr.Length; i++)
+    {
+        arr[i] = rnd.Next(min, max + 1);
+    }
+    return arr;
 }
 
-Console.WriteLine("Введите первую сторону треугольника");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите вторую сторону треугольника");
-int b = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите третью сторону треугольника");
-int c = Convert.ToInt32(Console.ReadLine());
+void PrintArray(int[] array)
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i < array.Length - 1)
+        {
+            System.Console.Write($"{array[i]}, ");
+        }
+        else
+        {
+            System.Console.Write($"{array[i]}");
+        }
+    }
+    Console.WriteLine($"]");
+}
 
-System.Console.WriteLine(Triagnle(a, b, c) ? "Треугольник может существовать" : "Треугольник не может существовать");
+void ReverseArray(int[] array)
+{
+    for (int i = 0; i < array.Length / 2; i++)
+    {
+        int temp = array[i];
+        array[i] = array[array.Length - 1 - i];
+        array[array.Length - 1 - i] = temp;
+    }
+}
+
+int[] arr = CreateArray(5, 1, 9);
+PrintArray(arr);
+ReverseArray(arr);
+PrintArray(arr);
