@@ -28,32 +28,15 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-// void SquareEvenNumbersMatrix(int[,] matrix)
-// {
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < matrix.GetLength(1); j++)
-//         {
-//             if (i % 2 == 0 && j % 2 == 0)
-//             {
-//                 matrix[i, j] *= matrix[i, j];
-//             }
-//         }
-//     }
-// }
 
 int SumDiagonalMatrix(int[,] matrix)
 {
     int sum = 0;
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    int minIndex = matrix.GetLength(0);
+    if(matrix.GetLength(1) < matrix.GetLength(0)) minIndex = matrix.GetLength(1);
+    for (int i = 0; i < minIndex; i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            if (i == j)
-            {
-                sum += matrix[i,j];
-            }
-        }
+       sum += matrix[i,i];
     }
     return sum;
 }
