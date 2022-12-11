@@ -31,8 +31,6 @@ void PrintMatrix(int[,] matrix)
 int[,] SortMaxMin(int[,] matrix)
 {
     int temp = 0;
-    int y = 0;
-    int[,] matrix2 = new int[matrix.GetLength(0), matrix.GetLength(1)];
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1) - 1; j++)
@@ -48,7 +46,7 @@ int[,] SortMaxMin(int[,] matrix)
             }
         }
     }
-    return matrix2;
+    return matrix;
 }
 
 int[,] array2D = CreateMatrixRndInt(3, 4, 0, 9);
